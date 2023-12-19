@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php echo $item['lname']." ".$item['fname'];?></title>
 	<link type="text/css" rel="stylesheet" href="css/green.css" />
 	<link type="text/css" rel="stylesheet" href="css/print.css" media="print"/>
@@ -42,25 +42,25 @@
 					<!-- Begin Social -->
 					<div class="social">
 						<ul>
-							<li><a class='north' href="javascript:window.print()" title="Печать"><img src="images/icn-print.jpg" alt="" /></a></li>
+							<li><a class='north' href="javascript:window.print()" title="РџРµС‡Р°С‚СЊ"><img src="images/icn-print.jpg" alt="" /></a></li>
 						</ul>
 					</div>
 					<!-- End Social -->
 				</div><!-- End Personal Information -->
 <!-- Begin Languages -->
 				<div class="entry">
-					<h2>ЯЗЫКИ</h2>
+					<h2>РЇР—Р«РљР</h2>
 					<ul class="info">
 <?php
 while(list($key,$lang)=@each($item['languages'])) {
-	echo "						<li>".$lang['name']." — ".$lang['description']."</li>\n";
+	echo "						<li>".$lang['name']." вЂ” ".$lang['description']."</li>\n";
 	}
 ?>
 					</ul>
 				</div><!-- End Languages -->
 <!-- Begin Education -->
 				<div class="entry">
-					<h2>ОБРАЗОВАНИЕ</h2>
+					<h2>РћР‘Р РђР—РћР’РђРќРР•</h2>
 <?php
 while(list($key,$edu)=@each($item['education'])) {
 	echo "					<div class=\"content\">\n";
@@ -73,17 +73,17 @@ while(list($key,$edu)=@each($item['education'])) {
 				</div><!-- End Education -->
 <!-- Begin Stage -->
 				<div class="entry">
-				<h2>Опыт работы</h2>
+				<h2>РћРїС‹С‚ СЂР°Р±РѕС‚С‹</h2>
 				<em><p><?php echo dateDiff($item['jobdate'], time(), 2); ?></p></em>
 <?php
 while(list($key,$stage)=@each($item['stage'])) {
 	echo "				<div class=\"content\">\n";
-	echo "					<h3>".iconv('UTF-8', 'CP1251', strftime("%B %Y", $stage['start']))." — ".
+	echo "					<h3>".iconv('UTF-8', 'CP1251', strftime("%B %Y", $stage['start']))." вЂ” ".
 								iconv('UTF-8', 'CP1251', strftime("%B %Y", $stage['end']))."<br />(".
 								dateDiff($stage['start'], $stage['end'], 2).")</h3>\n";
 	echo "					<p><strong>".$stage['job']."</strong><br />\n";
 	echo "					<em>".$stage['organisation']."(".$stage['location'].", <a href=\"http://".$stage['webcite'].
-								"\" target=\"blank\">".$stage['webcite']."</a>) — ".$stage['area']."</em></p>\n";
+								"\" target=\"blank\">".$stage['webcite']."</a>) вЂ” ".$stage['area']."</em></p>\n";
 	echo "					<ul class=\"info\">\n";
 	while(list($key2,$descr)=@each($stage['description']))
 		echo "						<li>".$descr."</li>\n";
@@ -94,7 +94,7 @@ while(list($key,$stage)=@each($item['stage'])) {
 				</div><!-- End Stage -->
 <!-- Begin Skills -->
 				<div class="entry">
-					<h2>НАВЫКИ</h2>
+					<h2>РќРђР’Р«РљР</h2>
 <?php
 while(list($key,$skill)=@each($item['skills'])) {
 	echo "					<div class=\"content\">\n";
@@ -109,7 +109,7 @@ while(list($key,$skill)=@each($item['skills'])) {
 				</div><!-- End Skills -->
 <!-- Begin Projects -->
 				<div class="entry">
-					<h2>Проекты</h2>
+					<h2>РџСЂРѕРµРєС‚С‹</h2>
 					<ul class="works">
 <?php
 while(list($key,$project)=@each($item['projects']))
@@ -126,6 +126,6 @@ while(list($key,$project)=@each($item['projects']))
 	</div>
 	<div class="wrapper-bottom"></div>
 </div>
-<div id="message"><a href="#top" id="top-link">На верх</a></div>
+<div id="message"><a href="#top" id="top-link">РќР° РІРµСЂС…</a></div>
 </body>
 </html>
